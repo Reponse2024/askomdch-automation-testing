@@ -15,14 +15,14 @@ public class PlaceOrderTest extends BaseTests {
 
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.placeOrder(
-                "John",
-                "Doe",
-                "United States (US)",
+                "Reponse",
+                "Iduha",
+                "Rwanda",
                 "123 Main Street",
-                "Los Angeles",
-                "California",
+                "Kigali",
+                "Gasabo",
                 "90001",
-                "john.doe@example.com"
+                "reponseiduha777@gmail.com"
         );
 
         Assert.assertTrue(checkoutPage.isOrderConfirmationDisplayed(),

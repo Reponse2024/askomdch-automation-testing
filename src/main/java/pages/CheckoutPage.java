@@ -32,36 +32,28 @@ public class CheckoutPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(billingFirstNameInput_InputElement));
         driver.findElement(billingFirstNameInput_InputElement).sendKeys(firstName);
     }
-
     public void fillBillingLastName(String lastName) {
         driver.findElement(billingLastNameInput_InputElement).sendKeys(lastName);
     }
-
     public void selectBillingCountry(String country) {
         Select countrySelect = new Select(driver.findElement(billingCountrySelect_SelectElement));
         countrySelect.selectByVisibleText(country);
     }
-
     public void fillBillingAddress(String address) {
         driver.findElement(billingAddressInput_InputElement).sendKeys(address);
     }
-
     public void fillBillingCity(String city) {
         driver.findElement(billingCityInput_InputElement).sendKeys(city);
     }
-
     public void fillBillingState(String state) {
         driver.findElement(billingStateInput_InputElement).sendKeys(state);
     }
-
     public void fillBillingPostcode(String postcode) {
         driver.findElement(billingPostcodeInput_InputElement).sendKeys(postcode);
     }
-
     public void fillBillingEmail(String email) {
         driver.findElement(billingEmailInput_InputElement).sendKeys(email);
     }
-
     public void fillBillingDetails(String firstName, String lastName, String country, String address, String city, String state, String postcode, String email) {
         fillBillingFirstName(firstName);
         fillBillingLastName(lastName);
