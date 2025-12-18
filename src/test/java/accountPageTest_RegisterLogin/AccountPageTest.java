@@ -1,6 +1,6 @@
-package AccountPageTest_RegisterLogin;
+package accountPageTest_RegisterLogin;
 
-import BaseTest.BaseTests;
+import baseTest.BaseTests;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 import pages.HomePage;

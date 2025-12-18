@@ -14,12 +14,13 @@ public class HomePage {
 
     private By storeTab= By.linkText("Store");
     private By accountTab= By.linkText("Account");
-    private By menTab = By.id("menu-item-1228");
     private By womenTab = By.id("menu-item-1229");
-    private By accessoriesTab = By.id("menu-item-1230");
-    private By cartIcon = By.cssSelector(".cart-container");
     private By cartCount = By.cssSelector(".ast-cart-menu-wrap .count");
     private By storeNavigationTab = By.linkText("Store");
+    private By menTab = By.id("menu-item-1228");
+    private By accessoriesTab = By.id("menu-item-1230");
+    By cartIcon_LinkElement = By.id("ast-site-header-cart");
+    By checkoutButton_LinkElement = By.cssSelector("a.checkout");
 
     public HomePage(WebDriver driver){
         this.driver=driver;
@@ -34,18 +35,22 @@ public class HomePage {
     public void navigateToWomen() {
         wait.until(ExpectedConditions.elementToBeClickable(womenTab)).click();
     }
+    public void navigateToMen() {wait.until(ExpectedConditions.elementToBeClickable(menTab)).click();}
+    public void navigateToAccessories() {wait.until(ExpectedConditions.elementToBeClickable(accessoriesTab)).click();}
 
-   /* public void navigateToMen() {
-        wait.until(ExpectedConditions.elementToBeClickable(menTab)).click();
-    }
-    public void navigateToAccessories() {
-        wait.until(ExpectedConditions.elementToBeClickable(accessoriesTab)).click();
-    }
     public void clickCartIcon() {
-        wait.until(ExpectedConditions.elementToBeClickable(cartIcon)).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(cartIcon_LinkElement));
+        wait.until(ExpectedConditions.elementToBeClickable(cartIcon_LinkElement)).click();
     }
 
-    */
+    public void clickCheckoutButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(checkoutButton_LinkElement)).click();
+    }
+
+    public void proceedToCheckout() {
+        clickCartIcon();
+        clickCheckoutButton();
+    }
 
     public String getCartCount() {
         try {
@@ -63,13 +68,6 @@ public class HomePage {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
-    }
-
-    public boolean isStoreTabVisible(){
-        return driver.findElement(storeTab).isDisplayed();
-    }
-    public boolean isAccountTabVisible(){
-        return driver.findElement(accountTab).isDisplayed();
     }
 
     public void clickStoreNavigationTab() {
