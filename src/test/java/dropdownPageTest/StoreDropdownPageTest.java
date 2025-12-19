@@ -1,6 +1,6 @@
 package dropdownPageTest;
 
-import BaseTest.BaseTests;
+import baseTest.BaseTests;
 import pages.HomePage;
 import pages.DropdownPage;
 import org.testng.Assert;
