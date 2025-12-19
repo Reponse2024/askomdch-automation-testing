@@ -19,8 +19,6 @@ public class HomePage {
     private By storeNavigationTab = By.linkText("Store");
     private By menTab = By.id("menu-item-1228");
     private By accessoriesTab = By.id("menu-item-1230");
-    By cartIcon_LinkElement = By.id("ast-site-header-cart");
-    By checkoutButton_LinkElement = By.cssSelector("a.checkout");
 
     public HomePage(WebDriver driver){
         this.driver=driver;
@@ -37,20 +35,6 @@ public class HomePage {
     }
     public void navigateToMen() {wait.until(ExpectedConditions.elementToBeClickable(menTab)).click();}
     public void navigateToAccessories() {wait.until(ExpectedConditions.elementToBeClickable(accessoriesTab)).click();}
-
-    public void clickCartIcon() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(cartIcon_LinkElement));
-        wait.until(ExpectedConditions.elementToBeClickable(cartIcon_LinkElement)).click();
-    }
-
-    public void clickCheckoutButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(checkoutButton_LinkElement)).click();
-    }
-
-    public void proceedToCheckout() {
-        clickCartIcon();
-        clickCheckoutButton();
-    }
 
     public String getCartCount() {
         try {
@@ -73,7 +57,4 @@ public class HomePage {
     public void clickStoreNavigationTab() {
         wait.until(ExpectedConditions.elementToBeClickable(storeNavigationTab)).click();
     }
-
-
-
 }
